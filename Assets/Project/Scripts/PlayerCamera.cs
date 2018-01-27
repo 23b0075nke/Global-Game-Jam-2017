@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
-//namespace LudumDare40 {
+namespace Character {
 	[RequireComponent(typeof(Animator))]
 	public class PlayerCamera : MonoBehaviour {
 		private enum AheadDirection {
@@ -123,4 +123,4 @@ using UnityStandardAssets.CrossPlatformInput;
 			transform.position = new Vector3(targetX, targetY, transform.position.z);
 		}
 	}
-//}
+}

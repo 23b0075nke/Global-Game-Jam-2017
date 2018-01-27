@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using OmiyaGames;
 
-namespace LudumDare40 {
+namespace Character
+{
 	[RequireComponent(typeof(Animator))]
 	[RequireComponent(typeof(Sprite))]
 	[RequireComponent(typeof(Rigidbody2D))]
@@ -57,7 +58,7 @@ namespace LudumDare40 {
 
 		void Start() {
 			body = GetComponent<Rigidbody2D> ();
-			animator = GetComponent<Animator> ();
+			//animator = GetComponent<Animator> ();
 		}
 
 		// Update is called once per frame
@@ -68,6 +69,7 @@ namespace LudumDare40 {
 				// Get the controls
 				controls.x = CrossPlatformInputManager.GetAxis ("Horizontal");
 				controls.y = CrossPlatformInputManager.GetAxis ("Vertical");
+                print(controls);
 
 				// Normalize directions (diagonals are the same speed as normal controls)
 				if ((Mathf.Approximately (controls.x, 0) == false) || (Mathf.Approximately (controls.y, 0) == false)) {
@@ -76,9 +78,9 @@ namespace LudumDare40 {
 			}
 
 			// Update animation
-			animator.SetFloat (Velocity, controls.sqrMagnitude);
-			animator.SetFloat (Horizontal, controls.x);
-			animator.SetFloat (Vertical, controls.y);
+			//animator.SetFloat (Velocity, controls.sqrMagnitude);
+			//animator.SetFloat (Horizontal, controls.x);
+			//animator.SetFloat (Vertical, controls.y);
 			if ((Mathf.Abs (controls.x) > 0.1f) || (Mathf.Abs(controls.y) > 0.1f)) {
 				if (Mathf.Abs (controls.x) > Mathf.Abs (controls.y)) {
 					facing = Direction.Left;
@@ -92,7 +94,7 @@ namespace LudumDare40 {
 					}
 				}
 			}
-			animator.SetInteger (LastDirection, ((int)facing));
+			//animator.SetInteger (LastDirection, ((int)facing));
 		}
 
 		void FixedUpdate() {
@@ -102,12 +104,12 @@ namespace LudumDare40 {
 
 			// Apply force on the character
 			if (move.sqrMagnitude > 0.1f) {
-				body.velocity = move;
+				body.AddForce(move, ForceMode2D.Impulse);
 			}
 		}
 
 		public void PlayFootSteps() {
-			footsteps.Play ();
+			//footsteps.Play ();
 		}
 	}
 }
