@@ -1,0 +1,126 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
+
+//namespace LudumDare40 {
+	[RequireComponent(typeof(Animator))]
+	public class PlayerCamera : MonoBehaviour {
+		private enum AheadDirection {
+			None,
+			Positive,
+			Negative
+		}
+
+		static PlayerCamera instance;
+
+		[SerializeField]
+		Vector2 margin = new Vector3(2f, 2f);
+		[SerializeField]
+		Vector2 lookAhead = new Vector3(1f, 1f);
+		[SerializeField]
+		Vector2 smooth = new Vector3(8f, 8f);
+
+		[SerializeField]
+		Rigidbody2D playerBody; // Reference to the player's transform.
+		[SerializeField]
+		string damageAnimation = "PlayDamage";
+		[SerializeField]
+		string victoryAnimation = "PlayVictory";
+
+		AheadDirection xDirection = AheadDirection.None;
+		AheadDirection yDirection = AheadDirection.None;
+		Animator animator = null;
+		bool focusOnPlayer = false;
+
+		void Start() {
+			instance = this;
+			focusOnPlayer = false;
+			animator = GetComponent<Animator> ();
+		}
+
+		public static void PlayDamageAnimation() {
+			instance.animator.SetTrigger (instance.damageAnimation);
+		}
+
+		public static void PlayVictoryAnimation() {
+			instance.animator.SetTrigger (instance.victoryAnimation);
+			instance.focusOnPlayer = true;
+		}
+
+		void CheckXMargin(ref float newXPosition) {
+			// Returns true if the distance between the camera and the player in the x axis is greater than the x margin.
+			CalculatePosition (ref newXPosition, ref xDirection,
+				playerBody.velocity.x, playerBody.position.x, transform.position.x, margin.x, lookAhead.x);
+		}
+
+		void CheckYMargin(ref float newYPosition) {
+			// Returns true if the distance between the camera and the player in the y axis is greater than the y margin.
+			CalculatePosition (ref newYPosition, ref yDirection,
+				playerBody.velocity.y, playerBody.position.y, transform.position.y, margin.y, lookAhead.y);
+		}
+
+		static void CalculatePosition (ref float newXPosition, ref AheadDirection direction,
+				float playerVelocity, float playerPosition, float cameraPosition, float margin, float lookAhead) {
+			if ((direction == AheadDirection.Positive) && (playerVelocity > 0)) {
+				newXPosition = playerPosition + lookAhead;
+			} else if ((direction == AheadDirection.Negative) && (playerVelocity < 0)) {
+				newXPosition = playerPosition - lookAhead;
+			} else {
+				direction = AheadDirection.None;
+				if (Mathf.Abs (cameraPosition - playerPosition) > margin) {
+					direction = AheadDirection.Negative;
+					newXPosition = playerPosition - lookAhead;
+					if (playerVelocity > 0) {
+						direction = AheadDirection.Positive;
+						newXPosition = playerPosition + lookAhead;
+					}
+				}
+			}
+		}
+
+		void OnDrawGizmos() {
+			if (playerBody != null) {
+				Vector3 size = Vector3.zero;
+				size.x = margin.x * 2;
+				size.y = margin.y * 2;
+				Gizmos.color = Color.white;
+				Gizmos.DrawWireCube (playerBody.transform.position, size);
+			}
+		}
+
+		void FixedUpdate() {
+			if (focusOnPlayer == false) {
+				TrackPlayer ();
+			} else {
+				float targetX = Mathf.Lerp(transform.position.x, playerBody.position.x, (smooth.x * Time.deltaTime));
+
+				// ... the target y coordinate should be a Lerp between the camera's current y position and the player's current y position.
+				float targetY = Mathf.Lerp(transform.position.y, playerBody.position.y, (smooth.y * Time.deltaTime));
+
+				// Set the camera's position to the target position with the same z component.
+				transform.position = new Vector3(targetX, targetY, transform.position.z);
+			}
+		}
+
+		void TrackPlayer()
+		{
+			// By default the target x and y coordinates of the camera are it's current x and y coordinates.
+			float targetX = transform.position.x;
+			float targetY = transform.position.y;
+
+			// If the player has moved beyond the x margin...
+			CheckXMargin(ref targetX);
+			// ... the target x coordinate should be a Lerp between the camera's current x position and the player's current x position.
+			targetX = Mathf.Lerp(transform.position.x, targetX, (smooth.x * Time.deltaTime));
+
+			// If the player has moved beyond the y margin...
+			CheckYMargin(ref targetY);
+			// ... the target y coordinate should be a Lerp between the camera's current y position and the player's current y position.
+			targetY = Mathf.Lerp(transform.position.y, targetY, (smooth.y * Time.deltaTime));
+
+			// Set the camera's position to the target position with the same z component.
+			transform.position = new Vector3(targetX, targetY, transform.position.z);
+		}
+	}
+//}
