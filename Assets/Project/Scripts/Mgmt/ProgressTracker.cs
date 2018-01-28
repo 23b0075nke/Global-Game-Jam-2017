@@ -13,8 +13,8 @@ namespace Mgmt
 		private const string NODE_FOLDER = "Stars";
 		public const string TRACKER_NAME = "ProgressTracker";
 		
-		private List<CenterNode> connected;
-		private int starCount; // Number of CenterNodes in scene; must be in Stars folder
+		public List<CenterNode> connected;
+		public int starCount; // Number of CenterNodes in scene; must be in Stars folder
 		private bool complete;
 		
 		// Use this for initialization
