@@ -788,10 +788,10 @@ MonoBehaviour:
   transitionDuration: 0.5
   music1:
     source: {fileID: 8237012}
-    snapshot: {fileID: 24508402, guid: 63a239bdfb2dd4519b121d21aa1ed3fb, type: 2}
+    snapshot: {fileID: 0}
   music2:
     source: {fileID: 8264130}
-    snapshot: {fileID: 24577990, guid: 63a239bdfb2dd4519b121d21aa1ed3fb, type: 2}
+    snapshot: {fileID: 0}
 --- !u!114 &11423310
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -848,11 +848,6 @@ MonoBehaviour:
   levels:
   - scenePath: Assets/Project/Scenes/Level Aries.unity
     displayName: Tutorial
-    cursorMode: 0
-    cursorModeWeb: 0
-    revertTimeScale: 1
-  - scenePath: Assets/Project/Scenes/Level 1.unity
-    displayName: Level 1
     cursorMode: 0
     cursorModeWeb: 0
     revertTimeScale: 1
