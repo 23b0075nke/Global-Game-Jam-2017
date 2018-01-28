@@ -132,7 +132,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314960424273070}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -167,14 +167,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86f1102d357def4795db822e2e7efd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDelay: 0
+  maxDelay: 1
   allStars:
   - {fileID: 114717375817528474, guid: ef8d5f948707cc943911c2d67a1a0242, type: 2}
+  - {fileID: 114717375817528474, guid: 9d8e027f02d39b94ca64a30ef7f91a38, type: 2}
+  - {fileID: 114717375817528474, guid: fce03914182eb4a46aeb949753f605fe, type: 2}
+  - {fileID: 114717375817528474, guid: 67ad14266481a844fbf74643658ef79f, type: 2}
+  - {fileID: 114717375817528474, guid: 2c71baba7a55e1c499411de16e1d2924, type: 2}
+  - {fileID: 114717375817528474, guid: c0a5c621b8663b44f899ada40caab8d1, type: 2}
+  - {fileID: 114717375817528474, guid: 96a4ac3d0a179e14e8c6336c3ed86fad, type: 2}
+  - {fileID: 114717375817528474, guid: 6e89cf74a16714545aab5994315dff65, type: 2}
+  - {fileID: 114717375817528474, guid: ddb0f017dfd79444baba0de1290e6587, type: 2}
+  - {fileID: 114717375817528474, guid: 5c5e7143c08fb4345afe168bf841c891, type: 2}
+  - {fileID: 114717375817528474, guid: 20ccb959e59400e488f07ef1659fa951, type: 2}
+  - {fileID: 114717375817528474, guid: ee72839fe7d8e2649b25dec0278f37c5, type: 2}
+  - {fileID: 114717375817528474, guid: 0474bb7d9cfc465428434e3d3b293807, type: 2}
+  - {fileID: 114717375817528474, guid: 956bd9340718ed54abb27a8e76d80e07, type: 2}
+  - {fileID: 114717375817528474, guid: 4b66605a12dc9494b87b7ad19ba6342e, type: 2}
+  - {fileID: 114717375817528474, guid: 4f34829dbeaf2e04aaa8128552544b95, type: 2}
+  - {fileID: 114717375817528474, guid: 44775f93c8e2bfb4a8368842e80ec810, type: 2}
+  - {fileID: 114717375817528474, guid: 55419395975aa974db3796f12185085d, type: 2}
+  - {fileID: 114717375817528474, guid: fafbbd7aaa693714396b69fbd8eee2be, type: 2}
+  - {fileID: 114717375817528474, guid: 13417a89d07220448b13365a1248c913, type: 2}
+  - {fileID: 114717375817528474, guid: 37da14b7f36f4fd49935b9fb69b07e85, type: 2}
+  - {fileID: 114717375817528474, guid: f3478f89b984c4a4f976458472cd2272, type: 2}
+  starScale: {x: 2, y: 2, z: 2}
   background:
-    maxNumStars: 30
+    maxNumStars: 200
     min3dRange: {fileID: 4375580462717274}
     max3dRange: {fileID: 4427108900595426}
   foreground:
-    maxNumStars: 10
+    maxNumStars: 15
     min3dRange: {fileID: 4990066213582098}
     max3dRange: {fileID: 4428228768953596}
+  starParent: {fileID: 0}

@@ -9,9 +9,14 @@ public class StarfieldObject : MonoBehaviour
     private string triggerName = "play";
     [SerializeField]
     private Vector3 rotateRange = Vector3.right;
+    [SerializeField]
+    private SpriteRenderer sprite;
+    [SerializeField]
+    private Color randomColor;
 
     private Animator animator = null;
     private StarfieldBackgroundGenerator generator;
+    private HSBColor randomColorGenerator;
 
     public Animator Animator
     {
@@ -28,6 +33,7 @@ public class StarfieldObject : MonoBehaviour
     public void Setup(StarfieldBackgroundGenerator generator)
     {
         this.generator = generator;
+        randomColorGenerator = new HSBColor(randomColor);
         NextLocation();
     }
 
@@ -49,6 +55,14 @@ public class StarfieldObject : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Animate
+        randomColorGenerator.Hue = Random.value;
+        sprite.color = randomColorGenerator.ToColor();
         Animator.SetTrigger(triggerName);
+    }
+
+    [ContextMenu("Set Sprite")]
+    private void SetSprite()
+    {
+        sprite = GetComponentInChildren<SpriteRenderer>();
     }
 }

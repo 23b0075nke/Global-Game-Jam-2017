@@ -64,12 +64,16 @@ public class StarfieldBackgroundGenerator : MonoBehaviour
     private float maxDelay;
     [SerializeField]
     private StarfieldObject[] allStars;
+    [SerializeField]
+    private Vector3 starScale = Vector3.one * 2;
 
     [Header("Range")]
     [SerializeField]
     private GeneratorModel background;
     [SerializeField]
     private GeneratorModel foreground;
+    [SerializeField]
+    private GameObject starParent;
 
     private OmiyaGames.RandomList<StarfieldObject> randomStar = null;
 
@@ -82,6 +86,21 @@ public class StarfieldBackgroundGenerator : MonoBehaviour
                 randomStar = new OmiyaGames.RandomList<StarfieldObject>(allStars);
             }
             return randomStar.RandomElement;
+        }
+    }
+
+    public GameObject StarParent
+    {
+        get
+        {
+            if(starParent == null)
+            {
+                starParent = new GameObject("Stars");
+                starParent.transform.position = Vector3.zero;
+                starParent.transform.rotation = Quaternion.identity;
+                starParent.transform.localScale = Vector3.one;
+            }
+            return starParent;
         }
     }
 
@@ -108,17 +127,22 @@ public class StarfieldBackgroundGenerator : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        GenerateStars(background);
+        GenerateStars(foreground, " Foreground ");
+        GenerateStars(background, " Background ");
     }
 
-    private void GenerateStars(GeneratorModel model)
+    private void GenerateStars(GeneratorModel model, string connectName)
     {
-        GameObject clone;
+        GameObject original, clone;
         StarfieldObject clonedScript;
         for (int index = 0; index < model.MaxNumStars; ++index)
         {
             // Generate a random star
-            clone = Instantiate<GameObject>(NextStarPrefab.gameObject);
+            original = NextStarPrefab.gameObject;
+            clone = Instantiate<GameObject>(original);
+            clone.transform.parent = StarParent.transform;
+            clone.transform.localScale = starScale;
+            clone.name = original.name + connectName + index;
 
             // Setup the script
             clonedScript = clone.GetComponent<StarfieldObject>();
