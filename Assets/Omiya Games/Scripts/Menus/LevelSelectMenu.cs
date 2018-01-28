@@ -46,6 +46,10 @@ namespace OmiyaGames.Menu
         [SerializeField]
         Button backButton;
 
+        [Header("Translations")]
+        [SerializeField]
+        bool translateLevelButton = true;
+
         bool isButtonLocked = false;
         ListButtonScript[] allLevelButtons = null;
         GameObject lastUnlockedButton = null;
@@ -200,7 +204,15 @@ namespace OmiyaGames.Menu
             // Setup the level button labels
             foreach (TranslatedText label in newButton.Labels)
             {
-                label.SetTranslationKey(scene.DisplayName.TranslationKey, (newButton.Index + 1));
+                if(translateLevelButton == true)
+                {
+                    label.SetTranslationKey(scene.DisplayName.TranslationKey, (newButton.Index + 1));
+                }
+                else
+                {
+                    label.SetTranslationKey("");
+                    label.Label.text = scene.DisplayName.TranslationKey;
+                }
             }
             newButton.name = scene.DisplayName.TranslationKey;
         }
