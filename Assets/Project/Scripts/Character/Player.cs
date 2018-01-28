@@ -16,6 +16,7 @@ namespace Character
         [SerializeField]
 		private Transform packageParent; // Tag-along object; copy of startNode
         private GameObject package;
+        private VisualLink link;
 
         // Use this for initialization
         void Start () 
@@ -33,9 +34,12 @@ namespace Character
 		{
 			print( "---UPDATE: picked up new package: " + sub.nodeName );
 			startNode = sub;
-			package = Instantiate( startNode.gameObject, packageParent );
+            package = Instantiate( startNode.gameObject, packageParent );
 			package.transform.localPosition = Vector3.zero;
             package.transform.localRotation = Quaternion.identity;
+
+
+            link = VisualLink.CreateLink(sub.LinkPrefab, package.GetComponent<SubNode>(), sub, true);
             //package.transform.localScale = Vector3.one;
         }
 		
@@ -45,6 +49,8 @@ namespace Character
 			startNode = null;
 			Destroy (package);
 			package = null;
-		}
-	}
+            Destroy(link.gameObject);
+            link = null;
+        }
+    }
 }

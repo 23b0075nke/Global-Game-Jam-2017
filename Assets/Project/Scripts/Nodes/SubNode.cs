@@ -27,6 +27,14 @@ namespace Node
 		private bool grabbed;
 		private Animator animController;
 
+        public VisualLink LinkPrefab
+        {
+            get
+            {
+                return link;
+            }
+        }
+
         // Use this for initialization
         void Start () 
 		{
@@ -89,7 +97,7 @@ namespace Node
 			print( "---UPDATE: Child node " + nodeName + " connected!" );
 
             // TODO - manually trigger animation? 
-            VisualLink.CreateLink(link, this, node);
+            VisualLink.CreateLink(LinkPrefab, this, node);
         }
 		
 		/*
