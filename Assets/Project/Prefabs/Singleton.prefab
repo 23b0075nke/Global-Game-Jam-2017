@@ -405,7 +405,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24360054, guid: 63a239bdfb2dd4519b121d21aa1ed3fb,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: ef863394110a8b94f8c1a2c08be3ba0b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d0e74cffb465722498e0327428eccbf2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -486,7 +486,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24360054, guid: 63a239bdfb2dd4519b121d21aa1ed3fb,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 139c825b4c9cd0040a0fd1b5550d5122, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 56a30173a80ddfb4289895d97e579152, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -846,8 +846,13 @@ MonoBehaviour:
     cursorModeWeb: 0
     revertTimeScale: 1
   levels:
+  - scenePath: Assets/Project/Scenes/Level Aries.unity
+    displayName: Tutorial
+    cursorMode: 0
+    cursorModeWeb: 0
+    revertTimeScale: 1
   - scenePath: Assets/Project/Scenes/Level 1.unity
-    displayName: Level Button
+    displayName: Level 1
     cursorMode: 0
     cursorModeWeb: 0
     revertTimeScale: 1
