@@ -17,6 +17,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/Menus/Credits.unity
     guid: 6d241a6195e8cd04d843ca2225f9ea70
-  - enabled: 1
+  - enabled: 0
     path: Assets/Project/Scenes/Debug.unity
     guid: 831f8ce20f4b81049ad463e7caf46220
+  - enabled: 0
+    path: Assets/Project/Scenes/Level 2.unity
+    guid: acdf45b04406ba94fa176da9435b0b1f
+  - enabled: 0
+    path: Assets/Project/Scenes/Level 3.unity
+    guid: eb68a584228fefd4296392b65e4c5a1f
+  - enabled: 1
+    path: Assets/Project/Scenes/Level Aries.unity
+    guid: ea88b26595646dc47ae079775723ae86
