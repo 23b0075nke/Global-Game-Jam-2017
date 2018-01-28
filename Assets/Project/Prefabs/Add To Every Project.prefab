@@ -284,7 +284,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318606183282448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.11, y: 0.04, z: 0}
+  m_LocalPosition: {x: 0.11, y: 2.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4944391898470684}
@@ -327,7 +327,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1097233603773754}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.83, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4996932, y: 0.4996932, z: 0.4996932}
   m_Children: []
   m_Father: {fileID: 4612872958885200}
@@ -493,7 +493,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.28
+  m_Radius: 0.54
 --- !u!81 &81683615711151248
 AudioListener:
   m_ObjectHideFlags: 1
@@ -595,9 +595,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c25cded1413b0471eb3e7a62e0ecdd46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  margin: {x: 2, y: 2}
-  lookAhead: {x: 1, y: 1}
-  smooth: {x: 2, y: 2}
+  margin: {x: 1, y: 1}
+  lookAhead: {x: 0.5, y: 0.5}
+  smooth: {x: 5, y: 5}
   playerBody: {fileID: 50516130263172226}
   damageAnimation: PlayDamage
   victoryAnimation: PlayVictory
