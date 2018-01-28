@@ -10,20 +10,24 @@ namespace Mgmt
 	*/
 	public class ProgressTracker : MonoBehaviour 
 	{
-		private const string NODE_FOLDER = "Stars";
+		private const string NODE_FOLDER = "Flowers";
 		public const string TRACKER_NAME = "ProgressTracker";
 		
-		public List<CenterNode> connected;
+		public HashSet<CenterNode> connected;
 		public int starCount; // Number of CenterNodes in scene; must be in Stars folder
 		private bool complete;
+
+		public AudioSource audio;
 		
 		// Use this for initialization
 		void Start () 
 		{
 			complete = false;
-			connected = new List<CenterNode>();
+			connected = new HashSet<CenterNode>();
 			CenterNode[] stars = GameObject.Find( NODE_FOLDER ).GetComponentsInChildren<CenterNode>();
 			starCount = stars.Length;
+
+			audio = GameObject.Find ("LevelComplete").GetComponent<AudioSource> ();
 		}
 		
 		// Update is called once per frame
@@ -37,19 +41,15 @@ namespace Mgmt
 		*/
 		public bool update( CenterNode node )
 		{
-			if ( node.IsConnected() )
+			connected.Add( node );
+			
+			if ( allNodesAdded() )
 			{
-				connected.Add( node );
-				
-				if ( allNodesAdded() )
-				{
-					print( "---UPDATE: CenterNode added to progress tracker." );
-					InitComplete();
-					return true;
-				}
+				print( "---UPDATE: CenterNode added to progress tracker." );
+				InitComplete();
+				return true;
 			}
 			
-			print( "///WARNING: Cannot add incomplete center node" );
 			return false;
 		}
 		
@@ -67,6 +67,8 @@ namespace Mgmt
 		private void InitComplete()
 		{
 			complete = true;
+			// Play music
+			audio.Play();
 			print( "---UPDATE: Level complete!" );
 			// TODO - completion vfx/etc
 		}
