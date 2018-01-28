@@ -1,3 +1,24 @@
+Global Game Jam 2018 project.
+Created by The B Team!
+
+Executable/zip data available here: https://drive.google.com/open?id=1ivL1gJzB64ELHix0xqytItZPBMHlqFU8
+
+Programming:
+	Rachel King
+	Taro Omiya
+Art:
+	Catherine Litvaitis
+	Jenny Bourke
+	Rachel (Rem) Mailhot
+Audio:
+	Tess Wainwright
+Special Thanks:
+	Global Game Jam
+	RPI
+	IGDA Albany
+	Bees!!
+
+----
 This is a template Unity project Omiya Games uses to start their game project.
 In this Unity project, the following folders has the following roles:
 
