@@ -34,8 +34,11 @@ namespace Character
 		Rigidbody2D body = null;
 		Animator animator = null;
 		Direction facing = Direction.Down;
+        Vector3? leftScale = null;
+        Vector3? rightScale = null;
+        bool isFlipped = false;
 
-		public Rigidbody2D Body {
+        public Rigidbody2D Body {
 			get {
 				return body;
 			}
@@ -45,6 +48,13 @@ namespace Character
 			get {
 				return facing;
 			}
+            private set
+            {
+                if(facing != value)
+                {
+                    facing = value;
+                }
+            }
 		}
 
 		public bool IsInControl {
@@ -56,7 +66,46 @@ namespace Character
 			}
 		}
 
-		void Start() {
+        public bool IsFlipped
+        {
+            get
+            {
+                return isFlipped;
+            }
+
+            set
+            {
+                if(isFlipped != value)
+                {
+                    // Set value
+                    isFlipped = value;
+
+                    // Setup vectors
+                    if (leftScale.HasValue == false)
+                    {
+                        leftScale = transform.localScale;
+                    }
+                    if (rightScale.HasValue == false)
+                    {
+                        Vector3 newScale = transform.localScale;
+                        newScale.x *= -1f;
+                        rightScale = newScale;
+                    }
+
+                    // Set the local scale
+                    if (isFlipped)
+                    {
+                        transform.localScale = rightScale.Value;
+                    }
+                    else
+                    {
+                        transform.localScale = leftScale.Value;
+                    }
+                }
+            }
+        }
+
+        void Start() {
 			body = GetComponent<Rigidbody2D> ();
 			//animator = GetComponent<Animator> ();
 		}
@@ -82,19 +131,23 @@ namespace Character
 			//animator.SetFloat (Vertical, controls.y);
 			if ((Mathf.Abs (controls.x) > 0.1f) || (Mathf.Abs(controls.y) > 0.1f)) {
 				if (Mathf.Abs (controls.x) > Mathf.Abs (controls.y)) {
-					facing = Direction.Left;
+					Facing = Direction.Left;
 					if (controls.x > 0) {
-						facing = Direction.Right;
+						Facing = Direction.Right;
 					}
 				} else {
-					facing = Direction.Down;
+					Facing = Direction.Down;
 					if (controls.y > 0) {
-						facing = Direction.Up;
+						Facing = Direction.Up;
 					}
 				}
 			}
-			//animator.SetInteger (LastDirection, ((int)facing));
-		}
+            if(Mathf.Approximately(controls.x, 0) == false)
+            {
+                IsFlipped = (controls.x > 0);
+            }
+            //animator.SetInteger (LastDirection, ((int)Facing));
+        }
 
 		void FixedUpdate() {
 			// Multiply by movement speed
