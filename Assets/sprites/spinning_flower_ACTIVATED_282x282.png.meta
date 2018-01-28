@@ -1,9 +1,29 @@
 fileFormatVersion: 2
 guid: 40b0d19a92f7f924cb1ad168ceae2a3a
-timeCreated: 1517154150
+timeCreated: 1517161913
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: spinning_flower_ACTIVATED_282x282_0
+    21300002: spinning_flower_ACTIVATED_282x282_1
+    21300004: spinning_flower_ACTIVATED_282x282_2
+    21300006: spinning_flower_ACTIVATED_282x282_3
+    21300008: spinning_flower_ACTIVATED_282x282_4
+    21300010: spinning_flower_ACTIVATED_282x282_5
+    21300012: spinning_flower_ACTIVATED_282x282_6
+    21300014: spinning_flower_ACTIVATED_282x282_7
+    21300016: spinning_flower_ACTIVATED_282x282_8
+    21300018: spinning_flower_ACTIVATED_282x282_9
+    21300020: spinning_flower_ACTIVATED_282x282_10
+    21300022: spinning_flower_ACTIVATED_282x282_11
+    21300024: spinning_flower_ACTIVATED_282x282_12
+    21300026: spinning_flower_ACTIVATED_282x282_13
+    21300028: spinning_flower_ACTIVATED_282x282_14
+    21300030: spinning_flower_ACTIVATED_282x282_15
+    21300032: spinning_flower_ACTIVATED_282x282_16
+    21300034: spinning_flower_ACTIVATED_282x282_17
+    21300036: spinning_flower_ACTIVATED_282x282_18
+    21300038: spinning_flower_ACTIVATED_282x282_19
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,7 +60,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -66,9 +86,299 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 742
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_1
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 742
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_2
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 742
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_3
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 742
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_4
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 742
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_5
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 742
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_6
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 742
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 460
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_8
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 460
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_9
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 460
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_10
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 460
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_11
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 460
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_12
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 460
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_13
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 460
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 178
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_15
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 178
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_16
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 178
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_17
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 178
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_18
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 178
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spinning_flower_ACTIVATED_282x282_19
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 178
+        width: 282
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
