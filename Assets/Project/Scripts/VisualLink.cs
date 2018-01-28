@@ -60,8 +60,25 @@ namespace Node
                     newLink.leftParticleSystem.Play();
                     newLink.rightParticleSystem.Play();
                 }
+                //OmiyaGames.Singleton.Get<OmiyaGames.SceneTransitionManager>().LoadNextLevel();
             }
             return newLink;
+        }
+
+        private void OnDestroy()
+        {
+            HashSet<SubNode> connections;
+            if ((LeftNode != null) && (RightNode != null))
+            {
+                if (connectedNodes.TryGetValue(LeftNode, out connections) == true)
+                {
+                    connections.Remove(RightNode);
+                }
+                if (connectedNodes.TryGetValue(RightNode, out connections) == true)
+                {
+                    connections.Remove(LeftNode);
+                }
+            }
         }
 
         private static bool AddOneWayConnection(SubNode left, SubNode right)
