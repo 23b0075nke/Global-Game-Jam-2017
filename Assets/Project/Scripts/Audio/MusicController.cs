@@ -15,8 +15,11 @@ public class MusicController : MonoBehaviour {
     void AddMusicLayer()
     {
         ActivatedNodes += 1;
-        int numNodes = Mathf.Clamp(ActivatedNodes, 0, snapshots.Length);
-        snapshots[numNodes].TransitionTo(fadeInDuration);
+        if (snapshots.Length > 0)
+        {
+            int numNodes = Mathf.Clamp(ActivatedNodes, 0, snapshots.Length);
+            snapshots[numNodes].TransitionTo(fadeInDuration);
+        }
     }
 
     //Test adding layers by pressing the left control button for now
