@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Node;
 using OmiyaGames;
+using OmiyaGames.Menu;
 
 namespace Mgmt
 {
@@ -74,10 +75,8 @@ namespace Mgmt
 			audio.Play();
 			print( "---UPDATE: Level complete!" );
 
-			// Trigger scene transition
-			Singleton.Get<SceneTransitionManager>().LoadNextLevel();
-
-			// TODO - completion vfx/etc
+            // Trigger scene transition
+            Singleton.Get<MenuManager>().GetMenu<LevelCompleteMenu>().Show();
 		}
 	}
 }
