@@ -33,7 +33,7 @@ namespace Character
 		{
 			print( "---UPDATE: picked up new package: " + sub.nodeName );
 			startNode = sub;
-			GameObject package = Instantiate( startNode.gameObject, packageParent );
+			package = Instantiate( startNode.gameObject, packageParent );
 			package.transform.localPosition = Vector3.zero;
             package.transform.localRotation = Quaternion.identity;
             //package.transform.localScale = Vector3.one;
