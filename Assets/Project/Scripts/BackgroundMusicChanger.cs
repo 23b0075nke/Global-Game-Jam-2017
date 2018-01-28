@@ -38,9 +38,6 @@ public class BackgroundMusicChanger : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        if(backgroundMusic != null)
-        {
-            Singleton.Get<BackgroundMusic>().CurrentMusic = backgroundMusic;
-        }
+        Singleton.Get<BackgroundMusic>().CurrentMusic = backgroundMusic;
     }
 }
