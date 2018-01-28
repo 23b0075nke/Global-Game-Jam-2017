@@ -718,4 +718,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeInDuration: 0.5
-  snapshots: []
+  snapshots:
+  - {fileID: 24500006, guid: 71232b1694b393e48b1512680dfa49d9, type: 2}
+  - {fileID: 245993219998614908, guid: 71232b1694b393e48b1512680dfa49d9, type: 2}
+  - {fileID: 245667812488210996, guid: 71232b1694b393e48b1512680dfa49d9, type: 2}
+  - {fileID: 245047416957618942, guid: 71232b1694b393e48b1512680dfa49d9, type: 2}
+  - {fileID: 245622880440463930, guid: 71232b1694b393e48b1512680dfa49d9, type: 2}
+  - {fileID: 245991457380593412, guid: 71232b1694b393e48b1512680dfa49d9, type: 2}
