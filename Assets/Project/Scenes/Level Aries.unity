@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1403672956}
-  nodeName: 
+  nodeName: 1a
   connection: {fileID: 655045057}
 --- !u!58 &291631050
 CircleCollider2D:
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 760351663}
-  nodeName: 
+  nodeName: 2a
   connection: {fileID: 291631049}
 --- !u!212 &655045058
 SpriteRenderer:
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1882442900}
-  nodeName: 
+  nodeName: 3c
   connection: {fileID: 1587711663}
 --- !u!58 &1445727763
 CircleCollider2D:
@@ -1482,7 +1482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1224257665}
-  nodeName: 
+  nodeName: 4c
   connection: {fileID: 1445727762}
 --- !u!212 &1587711664
 SpriteRenderer:
@@ -1591,7 +1591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 1882442900}
-  nodeName: 
+  nodeName: 3b
   connection: {fileID: 1838548303}
 --- !u!212 &1625307753
 SpriteRenderer:
@@ -1712,7 +1712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 760351663}
-  nodeName: 
+  nodeName: 2b
   connection: {fileID: 1625307752}
 --- !u!58 &1838548304
 CircleCollider2D:
