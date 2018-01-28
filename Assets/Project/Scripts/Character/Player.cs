@@ -13,10 +13,12 @@ namespace Character
 	{
 		public const string TAG_NAME = "Player";
 		public SubNode startNode; // Subnode the player is carrying to form a connection - instance of original object
-		private GameObject package; // Tag-along object; copy of startNode
-		
-		// Use this for initialization
-		void Start () 
+        [SerializeField]
+		private Transform packageParent; // Tag-along object; copy of startNode
+        private GameObject package;
+
+        // Use this for initialization
+        void Start () 
 		{
 			startNode = null;
 		}
@@ -31,11 +33,11 @@ namespace Character
 		{
 			print( "---UPDATE: picked up new package: " + sub.nodeName );
 			startNode = sub;
-			package = Instantiate( startNode.gameObject, this.transform.parent );
-			package.transform.position = this.transform.position * 1.1f;
-			float zPos = this.transform.position.z + 0.75f;
-			package.transform.position = new Vector3 (package.transform.position.x, package.transform.position.y, zPos);
-		}
+			GameObject package = Instantiate( startNode.gameObject, packageParent );
+			package.transform.localPosition = Vector3.zero;
+            package.transform.localRotation = Quaternion.identity;
+            //package.transform.localScale = Vector3.one;
+        }
 		
 		public void ClearPackage()
 		{

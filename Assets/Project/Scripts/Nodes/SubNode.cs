@@ -42,7 +42,7 @@ namespace Node
 			Player player = collider.GetComponent<Player>();
 			// If the collider is the player character
 
-			if ( (collider != null ) && collider.tag == player.tag )
+			if (player != null)
 			{
 				// If player is already carrying this object, clear it
 				if ( (player.startNode != null) && ( this.equals( player.startNode ) ) )
