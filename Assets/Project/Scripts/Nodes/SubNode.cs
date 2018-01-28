@@ -54,7 +54,7 @@ namespace Node
 				}
 				// Otherwise, test to see if we should drop off the package
 				// Package should be delivered if the it matches defined connections
-				else if ( IsDeliverable( player.package ) && !connected )
+				else if ( (player.package != null) && IsDeliverable( player.package ) && !connected )
 				{
 					// Connect this SubNode and package SubNode
 					Connect();
