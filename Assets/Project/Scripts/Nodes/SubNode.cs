@@ -13,7 +13,6 @@ namespace Node
 	{
 		public const string TAG_NAME = "SubNode";
 		public const string ID = "";
-		private Vector3 POSITION_OFFSET = new Vector3( 50, 50, 0 );
 		public CenterNode parent;
 		
 		// Pulled from MonoBehavior name; must be unique
@@ -36,21 +35,14 @@ namespace Node
 		// Update is called once per frame
 		void Update () 
 		{
-			// If the node is attached to the player instance
-			Player player = GameObject.FindGameObjectsWithTag( Player.TAG_NAME )[0].GetComponent<Player>();
-			Vector3 playerPos = player.transform.position;
-			if (this.transform.parent == player.transform.parent) 
-			{
-				print ("UPDATING NODE POS");
-				//this.transform.position -= POSITION_OFFSET;
-			}
 		}
 
 		void OnTriggerEnter2D( Collider2D collider )
 		{
 			Player player = collider.GetComponent<Player>();
 			// If the collider is the player character
-			if ( collider.tag == player.tag )
+
+			if ( (collider != null ) && collider.tag == player.tag )
 			{
 				// If player is already carrying this object, clear it
 				if ( (player.startNode != null) && ( this.equals( player.startNode ) ) )

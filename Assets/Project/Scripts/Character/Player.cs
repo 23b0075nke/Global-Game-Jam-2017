@@ -32,6 +32,9 @@ namespace Character
 			print( "---UPDATE: picked up new package: " + sub.nodeName );
 			startNode = sub;
 			package = Instantiate( startNode.gameObject, this.transform.parent );
+			package.transform.position = this.transform.position * 1.1f;
+			float zPos = this.transform.position.z + 0.75f;
+			package.transform.position = new Vector3 (package.transform.position.x, package.transform.position.y, zPos);
 		}
 		
 		public void ClearPackage()
