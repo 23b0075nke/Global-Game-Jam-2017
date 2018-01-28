@@ -10,6 +10,10 @@ namespace Node
         private SubNode leftNode;
         [SerializeField]
         private SubNode rightNode;
+        [SerializeField]
+        private ParticleSystem leftParticleSystem;
+        [SerializeField]
+        private ParticleSystem rightParticleSystem;
 
         private LineRenderer line;
         private Vector3 center;
@@ -31,7 +35,7 @@ namespace Node
             }
         }
 
-        public static VisualLink CreateLink(VisualLink prefab, SubNode left, SubNode right)
+        public static VisualLink CreateLink(VisualLink prefab, SubNode left, SubNode right, bool emitParticles = true)
         {
             // Check if the left has any connections
             VisualLink newLink = null;
@@ -50,6 +54,12 @@ namespace Node
                 newLink = clone.GetComponent<VisualLink>();
                 newLink.leftNode = left;
                 newLink.rightNode = right;
+
+                if(emitParticles == true)
+                {
+                    newLink.leftParticleSystem.Play();
+                    newLink.rightParticleSystem.Play();
+                }
             }
             return newLink;
         }
@@ -89,7 +99,9 @@ namespace Node
             {
                 line.enabled = true;
                 line.SetPosition(0, LeftNode.transform.position);
+                leftParticleSystem.transform.position = LeftNode.transform.position;
                 line.SetPosition(2, RightNode.transform.position);
+                rightParticleSystem.transform.position = RightNode.transform.position;
 
                 center = (LeftNode.transform.position + RightNode.transform.position) / 2f;
                 line.SetPosition(1, center);
