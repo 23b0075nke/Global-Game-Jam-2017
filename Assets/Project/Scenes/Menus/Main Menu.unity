@@ -1085,6 +1085,30 @@ Prefab:
       propertyPath: startBehavior
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 22425912, guid: 268d5824041a1244187bab4917ec74b3, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22419308, guid: 268d5824041a1244187bab4917ec74b3, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22401392, guid: 268d5824041a1244187bab4917ec74b3, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114166, guid: 268d5824041a1244187bab4917ec74b3, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22425912, guid: 268d5824041a1244187bab4917ec74b3, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22473980, guid: 268d5824041a1244187bab4917ec74b3, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 268d5824041a1244187bab4917ec74b3, type: 2}
   m_IsPrefabParent: 0
@@ -1141,6 +1165,43 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22486468, guid: 5c48fcaa0038d944f91d06c1f9b98156,
     type: 2}
   m_PrefabInternal: {fileID: 1747689970}
+--- !u!1 &1814894236 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 175516, guid: 268d5824041a1244187bab4917ec74b3, type: 2}
+  m_PrefabInternal: {fileID: 1597513139}
+--- !u!222 &1814894238
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814894236}
+--- !u!114 &1814894239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814894236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 9f38e5b61c22ac141ab37f50b296b937, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
 --- !u!1001 &1869731521
 Prefab:
   m_ObjectHideFlags: 0
