@@ -69,7 +69,6 @@ namespace Character
 				// Get the controls
 				controls.x = CrossPlatformInputManager.GetAxis ("Horizontal");
 				controls.y = CrossPlatformInputManager.GetAxis ("Vertical");
-                print(controls);
 
 				// Normalize directions (diagonals are the same speed as normal controls)
 				if ((Mathf.Approximately (controls.x, 0) == false) || (Mathf.Approximately (controls.y, 0) == false)) {

@@ -52,9 +52,10 @@ GameObject:
   - component: {fileID: 4944391898470684}
   - component: {fileID: 212846530505073140}
   - component: {fileID: 58386212086951326}
+  - component: {fileID: 114623424445016532}
   m_Layer: 0
   m_Name: Bee Sprite
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073657511637852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0.05, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4362044479575452}
@@ -223,7 +224,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318606183282448}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.11, y: 0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4944391898470684}
@@ -485,6 +486,18 @@ MonoBehaviour:
   playerBody: {fileID: 50516130263172226}
   damageAnimation: PlayDamage
   victoryAnimation: PlayVictory
+--- !u!114 &114623424445016532
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1097233603773754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 653ab4ae871c9c646beb41a80059d80e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  package: {fileID: 0}
 --- !u!114 &114927940646004794
 MonoBehaviour:
   m_ObjectHideFlags: 1
