@@ -4,31 +4,58 @@ using UnityEngine;
 
 public class SFXController : MonoBehaviour {
 
+    //Add audio sources and audio clips
     [SerializeField]
     private AudioSource ActivatedNodePlayer;
-
-    //Define Audio Clips
-    AudioClip Node_Turn_On_LowC;
-    AudioClip Node_Turn_On_D;
-    AudioClip Node_Turn_On_E;
-    AudioClip Node_Turn_On_F;
-    AudioClip Node_Turn_On_G;
-    AudioClip Node_Turn_On_A;
-    AudioClip Node_Turn_On_B;
-    AudioClip Node_Turn_On_HighC;
-
-    private void Start()
-    {
-        ActivatedNodePlayer.Play();
-    }
+    [SerializeField]
+    private AudioClip Node_Turn_On_LowC;
+    [SerializeField]
+    private AudioClip Node_Turn_On_D;
+    [SerializeField]
+    private AudioClip Node_Turn_On_E;
+    [SerializeField]
+    private AudioClip Node_Turn_On_F;
+    [SerializeField]
+    private AudioClip Node_Turn_On_G;
+    [SerializeField]
+    private AudioClip Node_Turn_On_A;
+    [SerializeField]
+    private AudioClip Node_Turn_On_B;
+    [SerializeField]
+    private AudioClip Node_Turn_On_HighC;
 
     void PlayNodeConnectionSound(int ActivatedNodes, int TotalNodes)
     {
         //Play the low C to start with and the high C at the end
-        if (ActivatedNodes == TotalNodes)
+        if (TotalNodes - ActivatedNodes >= 7)
         {
             ActivatedNodePlayer.clip = Node_Turn_On_LowC;
-        } else if (ActivatedNodes == 1)
+        }
+        else if (TotalNodes - ActivatedNodes == 6)
+        {
+            ActivatedNodePlayer.clip = Node_Turn_On_D;
+        }
+        else if (TotalNodes - ActivatedNodes == 5)
+        {
+            ActivatedNodePlayer.clip = Node_Turn_On_E;
+        }
+        else if (TotalNodes - ActivatedNodes == 4)
+        {
+            ActivatedNodePlayer.clip = Node_Turn_On_F;
+        }
+        else if (TotalNodes - ActivatedNodes == 3)
+        {
+            ActivatedNodePlayer.clip = Node_Turn_On_G;
+        }
+        else if (TotalNodes - ActivatedNodes == 2)
+        {
+            ActivatedNodePlayer.clip = Node_Turn_On_A;
+        }
+        else if (TotalNodes - ActivatedNodes == 1)
+        {
+            ActivatedNodePlayer.clip = Node_Turn_On_B;
+        }
+        else if (TotalNodes == ActivatedNodes)
         {
             ActivatedNodePlayer.clip = Node_Turn_On_HighC;
         }
@@ -45,7 +72,7 @@ public class SFXController : MonoBehaviour {
         if (Input.GetButtonDown("Fire1"))
         {
             ActivatedNodes++;
-            PlayNodeConnectionSound(ActivatedNodes, 1);
+            PlayNodeConnectionSound(ActivatedNodes, 8);
         }
     }
 #endif
