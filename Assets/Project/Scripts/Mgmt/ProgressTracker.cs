@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Node;
+using OmiyaGames;
 
 namespace Mgmt
 {
@@ -66,10 +67,16 @@ namespace Mgmt
 		*/
 		private void InitComplete()
 		{
+			// Set completion
 			complete = true;
+
 			// Play music
 			audio.Play();
 			print( "---UPDATE: Level complete!" );
+
+			// Trigger scene transition
+			Singleton.Get<SceneTransitionManager>().LoadNextLevel();
+
 			// TODO - completion vfx/etc
 		}
 	}
