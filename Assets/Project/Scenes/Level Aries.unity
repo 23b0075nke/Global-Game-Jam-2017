@@ -190,6 +190,7 @@ MonoBehaviour:
   parent: {fileID: 1403672956}
   nodeName: 1a
   connection: {fileID: 655045057}
+  link: {fileID: 114298392022019594, guid: 706cba71e2b8e90488c7441db834b3ea, type: 2}
 --- !u!58 &291631050
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -627,6 +628,7 @@ MonoBehaviour:
   parent: {fileID: 760351663}
   nodeName: 2a
   connection: {fileID: 291631049}
+  link: {fileID: 114298392022019594, guid: 706cba71e2b8e90488c7441db834b3ea, type: 2}
 --- !u!212 &655045058
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1653,6 +1655,7 @@ MonoBehaviour:
   parent: {fileID: 1882442900}
   nodeName: 3c
   connection: {fileID: 1587711663}
+  link: {fileID: 114298392022019594, guid: 706cba71e2b8e90488c7441db834b3ea, type: 2}
 --- !u!58 &1445727763
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1944,6 +1947,7 @@ MonoBehaviour:
   parent: {fileID: 1224257665}
   nodeName: 4c
   connection: {fileID: 1445727762}
+  link: {fileID: 114298392022019594, guid: 706cba71e2b8e90488c7441db834b3ea, type: 2}
 --- !u!212 &1587711664
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2071,6 +2075,7 @@ MonoBehaviour:
   parent: {fileID: 1882442900}
   nodeName: 3b
   connection: {fileID: 1838548303}
+  link: {fileID: 114298392022019594, guid: 706cba71e2b8e90488c7441db834b3ea, type: 2}
 --- !u!212 &1625307753
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2298,6 +2303,7 @@ MonoBehaviour:
   parent: {fileID: 760351663}
   nodeName: 2b
   connection: {fileID: 1625307752}
+  link: {fileID: 114298392022019594, guid: 706cba71e2b8e90488c7441db834b3ea, type: 2}
 --- !u!58 &1838548304
 CircleCollider2D:
   m_ObjectHideFlags: 0
