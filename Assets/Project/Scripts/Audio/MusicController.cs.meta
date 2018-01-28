@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 39df37a0c4847b44ead2dda928ba378b
+timeCreated: 1517102919
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Mixer: {fileID: 24100000, guid: 71232b1694b393e48b1512680dfa49d9, type: 2}
+  - ZeroNodes: {instanceID: 0}
+  - OneNode: {instanceID: 0}
+  - TwoNodes: {instanceID: 0}
+  - ThreeNodes: {instanceID: 0}
+  - FourNodes: {instanceID: 0}
+  - FiveNodes: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
