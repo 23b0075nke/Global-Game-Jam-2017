@@ -71,6 +71,20 @@ public class StarfieldBackgroundGenerator : MonoBehaviour
     [SerializeField]
     private GeneratorModel foreground;
 
+    private OmiyaGames.RandomList<StarfieldObject> randomStar = null;
+
+    public StarfieldObject NextStarPrefab
+    {
+        get
+        {
+            if(randomStar == null)
+            {
+                randomStar = new OmiyaGames.RandomList<StarfieldObject>(allStars);
+            }
+            return randomStar.RandomElement;
+        }
+    }
+
     public float NextDelay
     {
         get
@@ -99,14 +113,12 @@ public class StarfieldBackgroundGenerator : MonoBehaviour
 
     private void GenerateStars(GeneratorModel model)
     {
-        int randomIndex;
         GameObject clone;
         StarfieldObject clonedScript;
         for (int index = 0; index < model.MaxNumStars; ++index)
         {
             // Generate a random star
-            randomIndex = Random.Range(0, allStars.Length);
-            clone = Instantiate<GameObject>(allStars[randomIndex].gameObject);
+            clone = Instantiate<GameObject>(NextStarPrefab.gameObject);
 
             // Setup the script
             clonedScript = clone.GetComponent<StarfieldObject>();
