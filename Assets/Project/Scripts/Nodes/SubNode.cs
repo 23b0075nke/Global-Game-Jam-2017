@@ -25,6 +25,7 @@ namespace Node
 
         private bool connected;
 		private bool grabbed;
+		private Animator animController;
 
         // Use this for initialization
         void Start () 
@@ -32,6 +33,7 @@ namespace Node
 			connected = false;
 			grabbed = false;
 			nodeName = name;
+			animController = this.gameObject.GetComponent<Animator>();
 		}
 		
 		// Update is called once per frame
@@ -82,7 +84,8 @@ namespace Node
 		public void Connect(SubNode node)
 		{
 			this.connected = true;
-			
+			PlayGlowAnimation ();
+
 			print( "---UPDATE: Child node " + nodeName + " connected!" );
 
             // TODO - manually trigger animation? 
@@ -111,6 +114,7 @@ namespace Node
 		*/ 
 		private bool IsDeliverable( SubNode package )
 		{
+			print ("CHECKING DELIVERABILITY: " + package.nodeName + " " + connection.nodeName);
 			return ( package.nodeName == connection.nodeName );
 		}
 		
@@ -130,6 +134,14 @@ namespace Node
 		public void ConnectParentSubNode()
 		{
 			this.parent.ConnectSubNode();
+		}
+
+		private void PlayGlowAnimation()
+		{
+			if (animController != null) 
+			{
+				animController.SetInteger ("state", 1);
+			}
 		}
 	}
 }

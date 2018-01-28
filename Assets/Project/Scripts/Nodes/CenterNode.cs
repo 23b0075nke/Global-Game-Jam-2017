@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Node;
 using Mgmt;
+using Music;
 
 namespace Node
 {
@@ -14,15 +15,31 @@ namespace Node
 	public class CenterNode : MonoBehaviour 
 	{
 		public const string TAG_NAME = "CenterNode";
+		private const string ACTIVATION_ANIM = "FlowerActivation";
+		private const string ACTIVATED_IDLE_ANIM = "ActivatedFlowerIdle";
 
 		private SubNode[] children;
 		private bool connected;
+		private bool connectionAnimationComplete;
+
+		private MusicController musicController;
+		private SFXController sfxController;
+
+		private Animator animController;
 		
 		// Use this for initialization
 		void Start () 
 		{
 			connected = false;
+			connectionAnimationComplete = false;
 			children = GetComponentsInChildren<SubNode>();
+
+			// Get reference to animation controller
+			animController = this.gameObject.GetComponent<Animator>();
+
+			// Get reference to music handler
+			musicController = GameObject.Find( "MusicHandler" ).GetComponent<MusicController>();
+			sfxController = GameObject.Find ("SFXHandler").GetComponent<SFXController> ();
 		}
 		
 		// Update is called once per frame
@@ -57,17 +74,34 @@ namespace Node
 			if ( AllChildrenConnected() )
 			{
 				print( "!!! OBJECTIVE: Parent node connected!" );
+
+				// Set connected var
 				connected = true;
+
+				// Update progress tracker
 				ProgressTracker tracker = GameObject.Find( ProgressTracker.TRACKER_NAME ).GetComponent<ProgressTracker>();
 				tracker.update( this );
-				
-				// TODO - trigger animation sequence?
+
+				// Trigger animation sequence
+				PlayConnectionAnimation();
+
+				// Play sfx and music
+				sfxController.PlayNodeConnectionSound( tracker.connected.Count, tracker.starCount );
+				musicController.AddMusicLayer();
 			}
 		}
 		
 		public bool IsConnected()
 		{
 			return connected;
+		}
+
+		private void PlayConnectionAnimation()
+		{
+			if (animController != null) 
+			{
+				animController.SetInteger ("state", 1);
+			}
 		}
 	}
 }
