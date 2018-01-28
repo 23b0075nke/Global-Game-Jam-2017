@@ -5,16 +5,21 @@ using Character;
 
 namespace Node
 {
+	/*
+	* SubNodes form 1:1 connections between different CenterNodes.
+	* A CenterNode needs one SubNode for each other CenterNode it is connected to.
+	*/
 	public class SubNode : MonoBehaviour 
 	{
-		public const string tagName = "SubNode";
+		public const string TAG_NAME = "SubNode";
 		public const string ID = "";
 		public CenterNode parent; 
 		
-		private string nodeName; // Pulled from MonoBehavior name; must be unique
+		// Pulled from MonoBehavior name; must be unique
+		public string nodeName;	
 		
 		[SerializeField] 
-		private SubNode[] connections;
+		private SubNode connection;
 		
 		private bool connected;
 
@@ -23,7 +28,6 @@ namespace Node
 		{
 			connected = false;
 			nodeName = name;
-			print( "subnode name set to " + nodeName );
 		}
 		
 		// Update is called once per frame
@@ -34,25 +38,35 @@ namespace Node
 
 		void OnTriggerEnter2D( Collider2D collider )
 		{
-			print( "Trigger enter!!" );
 			Player player = collider.GetComponent<Player>();
 			// If the collider is the player character
 			if ( collider.tag == player.tag )
 			{
-				print( "Player entered subnode" );
-				// Update metadata from player collision
-				//player.CollideWithSubNode( this );
-				
+				// If player is already carrying this object, clear it
+				if ( (player.package != null) && ( this.equals( player.package ) ) )
+				{
+					player.ClearPackage();
+				}
 				// Pick up this node if we're circling the same star or if we don't currently have one
-				if ( player.package == null || player.package.parent == this.parent )
+				else if ( player.package == null || player.package.parent == this.parent )
 				{
 					player.PickUpSubNode( this );
 				}
 				// Otherwise, test to see if we should drop off the package
 				// Package should be delivered if the it matches defined connections
-				else if ( IsDeliverable( player.package ) )
+				else if ( IsDeliverable( player.package ) && !connected )
 				{
-					Connect( player );
+					// Connect this SubNode and package SubNode
+					Connect();
+					player.package.Connect();
+					
+					// Let parent know it's got a new connection.
+					// 		This will also trigger a check to see if its completely connected.
+					ConnectParentSubNode();
+					player.package.ConnectParentSubNode();
+					
+					// Reset player data
+					player.ClearPackage();
 				}
 			}
 		}
@@ -61,14 +75,11 @@ namespace Node
 		 * Connection behavior - flip the connected bool
 		 * Triggers parent connection check; parent will connect if all children are connected.
 		 */
-		private void Connect( Player player )
+		public void Connect()
 		{
-			print( "Call to connect" );
 			this.connected = true;
-			this.parent.ConnectSubNode();
 			
-			// Console log
-			print( "Child node connected!" );
+			print( "---UPDATE: Child node " + nodeName + " connected!" );
 			
 			// TODO - manually trigger animation? 
 		}
@@ -86,15 +97,25 @@ namespace Node
 		*/ 
 		private bool IsDeliverable( SubNode package )
 		{
-			foreach( SubNode connection in connections )
+			return ( package.nodeName == connection.nodeName );
+		}
+		
+		/* 
+		* Returns true if two nodes share a name
+		*/
+		private bool equals( SubNode sub )
+		{
+			if ( sub.nodeName.Equals(this.nodeName) )
 			{
-				if ( package.nodeName == connection.nodeName )
-				{
-					return true;
-				}
+				return true;
 			}
 			
 			return false;
+		}
+		
+		public void ConnectParentSubNode()
+		{
+			this.parent.ConnectSubNode();
 		}
 	}
 }
