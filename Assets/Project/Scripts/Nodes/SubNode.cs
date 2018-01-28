@@ -20,12 +20,14 @@ namespace Node
 		
 		[SerializeField] 
 		private SubNode connection;
-		
-		private bool connected;
+        [SerializeField]
+        private VisualLink link;
+
+        private bool connected;
 		private bool grabbed;
 
-		// Use this for initialization
-		void Start () 
+        // Use this for initialization
+        void Start () 
 		{
 			connected = false;
 			grabbed = false;
@@ -59,8 +61,8 @@ namespace Node
 				else if ( (player.startNode != null) && IsDeliverable( player.startNode ) && !connected )
 				{
 					// Connect this SubNode and package SubNode
-					Connect();
-					player.startNode.Connect();
+					Connect(player.startNode);
+					player.startNode.Connect(this);
 					
 					// Let parent know it's got a new connection.
 					// 		This will also trigger a check to see if its completely connected.
@@ -77,14 +79,15 @@ namespace Node
 		 * Connection behavior - flip the connected bool
 		 * Triggers parent connection check; parent will connect if all children are connected.
 		 */
-		public void Connect()
+		public void Connect(SubNode node)
 		{
 			this.connected = true;
 			
 			print( "---UPDATE: Child node " + nodeName + " connected!" );
-			
-			// TODO - manually trigger animation? 
-		}
+
+            // TODO - manually trigger animation? 
+            VisualLink.CreateLink(link, this, node);
+        }
 		
 		/*
 		* Returns true if this node is connected 

@@ -212,6 +212,7 @@ MonoBehaviour:
   parent: {fileID: 114897889034047638}
   nodeName: 
   connection: {fileID: 0}
+  link: {fileID: 114298392022019594, guid: 706cba71e2b8e90488c7441db834b3ea, type: 2}
 --- !u!114 &114683945168492242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,6 +227,7 @@ MonoBehaviour:
   parent: {fileID: 114897889034047638}
   nodeName: 
   connection: {fileID: 0}
+  link: {fileID: 114298392022019594, guid: 706cba71e2b8e90488c7441db834b3ea, type: 2}
 --- !u!114 &114750830139540886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,6 +242,7 @@ MonoBehaviour:
   parent: {fileID: 114897889034047638}
   nodeName: 
   connection: {fileID: 0}
+  link: {fileID: 114298392022019594, guid: 706cba71e2b8e90488c7441db834b3ea, type: 2}
 --- !u!114 &114897889034047638
 MonoBehaviour:
   m_ObjectHideFlags: 1
