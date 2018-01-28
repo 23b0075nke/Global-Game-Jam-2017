@@ -13,7 +13,8 @@ namespace Node
 	{
 		public const string TAG_NAME = "SubNode";
 		public const string ID = "";
-		public CenterNode parent; 
+		private Vector3 POSITION_OFFSET = new Vector3( 50, 50, 0 );
+		public CenterNode parent;
 		
 		// Pulled from MonoBehavior name; must be unique
 		public string nodeName;	
@@ -22,18 +23,27 @@ namespace Node
 		private SubNode connection;
 		
 		private bool connected;
+		private bool grabbed;
 
 		// Use this for initialization
 		void Start () 
 		{
 			connected = false;
+			grabbed = false;
 			nodeName = name;
 		}
 		
 		// Update is called once per frame
 		void Update () 
 		{
-			
+			// If the node is attached to the player instance
+			Player player = GameObject.FindGameObjectsWithTag( Player.TAG_NAME )[0].GetComponent<Player>();
+			Vector3 playerPos = player.transform.position;
+			if (this.transform.parent == player.transform.parent) 
+			{
+				print ("UPDATING NODE POS");
+				//this.transform.position -= POSITION_OFFSET;
+			}
 		}
 
 		void OnTriggerEnter2D( Collider2D collider )
@@ -43,27 +53,27 @@ namespace Node
 			if ( collider.tag == player.tag )
 			{
 				// If player is already carrying this object, clear it
-				if ( (player.package != null) && ( this.equals( player.package ) ) )
+				if ( (player.startNode != null) && ( this.equals( player.startNode ) ) )
 				{
 					player.ClearPackage();
 				}
 				// Pick up this node if we're circling the same star or if we don't currently have one
-				else if ( player.package == null || player.package.parent == this.parent )
+				else if ( player.startNode == null || player.startNode.parent == this.parent )
 				{
 					player.PickUpSubNode( this );
 				}
 				// Otherwise, test to see if we should drop off the package
 				// Package should be delivered if the it matches defined connections
-				else if ( (player.package != null) && IsDeliverable( player.package ) && !connected )
+				else if ( (player.startNode != null) && IsDeliverable( player.startNode ) && !connected )
 				{
 					// Connect this SubNode and package SubNode
 					Connect();
-					player.package.Connect();
+					player.startNode.Connect();
 					
 					// Let parent know it's got a new connection.
 					// 		This will also trigger a check to see if its completely connected.
 					ConnectParentSubNode();
-					player.package.ConnectParentSubNode();
+					player.startNode.ConnectParentSubNode();
 					
 					// Reset player data
 					player.ClearPackage();
@@ -90,6 +100,15 @@ namespace Node
 		public bool IsConnected()
 		{
 			return connected;
+		}
+
+		/*
+		 * Set "grabbed" status to true
+		 */
+		public void grab()
+		{
+			// Make a copy of the object 
+			this.grabbed = true;
 		}
 		
 		/*

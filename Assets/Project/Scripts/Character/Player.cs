@@ -12,12 +12,13 @@ namespace Character
 	public class Player : MonoBehaviour 
 	{
 		public const string TAG_NAME = "Player";
-		public SubNode package; // Subnode the player is carrying to form a connection
+		public SubNode startNode; // Subnode the player is carrying to form a connection - instance of original object
+		private GameObject package; // Tag-along object; copy of startNode
 		
 		// Use this for initialization
 		void Start () 
 		{
-			package = null;
+			startNode = null;
 		}
 		
 		// Update is called once per frame
@@ -29,12 +30,15 @@ namespace Character
 		public void PickUpSubNode( SubNode sub )
 		{
 			print( "---UPDATE: picked up new package: " + sub.nodeName );
-			package = sub;
+			startNode = sub;
+			package = Instantiate( startNode.gameObject, this.transform.parent );
 		}
 		
 		public void ClearPackage()
 		{
-			print( "---UPDATE: Package " + package.nodeName + " cleared" );
+			print( "---UPDATE: Package " + startNode.nodeName + " cleared" );
+			startNode = null;
+			Destroy (package);
 			package = null;
 		}
 	}
