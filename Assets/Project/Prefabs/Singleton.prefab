@@ -788,10 +788,10 @@ MonoBehaviour:
   transitionDuration: 0.5
   music1:
     source: {fileID: 8237012}
-    snapshot: {fileID: 0}
+    snapshot: {fileID: 24508402, guid: 63a239bdfb2dd4519b121d21aa1ed3fb, type: 2}
   music2:
     source: {fileID: 8264130}
-    snapshot: {fileID: 0}
+    snapshot: {fileID: 24577990, guid: 63a239bdfb2dd4519b121d21aa1ed3fb, type: 2}
 --- !u!114 &11423310
 MonoBehaviour:
   m_ObjectHideFlags: 1
