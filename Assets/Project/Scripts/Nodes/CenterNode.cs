@@ -33,6 +33,7 @@ namespace Node
 			connected = false;
 			connectionAnimationComplete = false;
 			children = GetComponentsInChildren<SubNode>();
+			print (name + " " + children);
 
 			// Get reference to animation controller
 			animController = this.gameObject.GetComponent<Animator>();

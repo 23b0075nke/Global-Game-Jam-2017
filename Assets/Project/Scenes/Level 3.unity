@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -266,6 +266,7 @@ MonoBehaviour:
   parent: {fileID: 234967042}
   nodeName: 
   connection: {fileID: 521933761}
+  link: {fileID: 0}
 --- !u!212 &86616815
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -508,6 +509,7 @@ MonoBehaviour:
   parent: {fileID: 1742881621}
   nodeName: 
   connection: {fileID: 0}
+  link: {fileID: 0}
 --- !u!212 &174528719
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1416,6 +1418,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 763983a5d2c524d4792eb03999853064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starCount: 0
+  audio: {fileID: 0}
 --- !u!4 &1015372142
 Transform:
   m_ObjectHideFlags: 0
@@ -1692,14 +1696,6 @@ Prefab:
     - target: {fileID: 400000, guid: d1866c312731e0e438fcc928b4ee86fe, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11419168, guid: d1866c312731e0e438fcc928b4ee86fe, type: 2}
-      propertyPath: music2.snapshot
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11419168, guid: d1866c312731e0e438fcc928b4ee86fe, type: 2}
-      propertyPath: music1.snapshot
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d1866c312731e0e438fcc928b4ee86fe, type: 2}
@@ -2387,6 +2383,7 @@ MonoBehaviour:
   parent: {fileID: 234967042}
   nodeName: 
   connection: {fileID: 521933761}
+  link: {fileID: 0}
 --- !u!212 &1846187716
 SpriteRenderer:
   m_ObjectHideFlags: 0
