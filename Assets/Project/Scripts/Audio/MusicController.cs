@@ -58,7 +58,7 @@ namespace Music
 			ActivatedNodes += 1;
 			if (snapshots.Length > 0)
 			{
-				int numNodes = Mathf.Clamp(ActivatedNodes, 0, snapshots.Length);
+				int numNodes = Mathf.Clamp(ActivatedNodes, 0, snapshots.Length - 1);
 				snapshots[numNodes].TransitionTo(fadeInDuration);
 			}
 		}
